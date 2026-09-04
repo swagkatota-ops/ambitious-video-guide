@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お悩みから選ぶ｜AMBITIOUS 集客チャンネル（かんたん版）</title>
+<meta name="description" content="工務店のYouTube集客ノウハウ動画を、今のお悩みから3ステップで選べます。AMBITIOUS集客チャンネルのかんたん動画ガイド。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#E7322F; --red-dark:#c0201d; --yellow:#FCD344;
+  --black:#100100; --ink:#1c1c1c; --muted:#767676;
+  --line:#e4e4e4; --soft:#f6f6f6;
+  --jp:"Noto Sans JP","游ゴシック","Yu Gothic",YuGothic,"ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro",Meiryo,sans-serif;
+  --en:"Abril Fatface",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--jp);color:var(--ink);background:#fff;line-height:1.85;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.wrap{width:100%;max-width:900px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:14px;height:66px;max-width:1100px;margin:0 auto;padding:0 20px}
+.logo{display:flex;align-items:center;gap:9px}
+.logo-mark{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--yellow));display:grid;place-items:center;flex:0 0 auto}
+.logo-mark::after{content:"";width:0;height:0;border-left:10px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
+.logo b{font-size:17px;letter-spacing:.12em;font-weight:900;display:block;line-height:1.1}
+.logo i{font-style:normal;font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.02em}
+.hd-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.hd-link{font-size:12px;font-weight:700;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:2px}
+.hd-link:hover{color:var(--red);border-color:var(--red)}
+.hd-cta{background:var(--red);color:#fff;font-weight:900;font-size:12.5px;padding:11px 17px;white-space:nowrap}
+.hd-cta:hover{background:var(--red-dark)}
+
+/* intro */
+.intro{text-align:center;padding:60px 0 10px}
+.intro .en{font-family:var(--en);font-size:13px;letter-spacing:.24em;color:var(--red)}
+.intro h1{font-size:clamp(24px,4.6vw,38px);font-weight:900;line-height:1.5;margin-top:12px}
+.intro h1 .mk{background:linear-gradient(transparent 62%,var(--yellow) 62%);padding:0 3px}
+.intro p{margin-top:16px;color:#555;font-size:15px}
+.steps{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:26px;font-size:12px;font-weight:700;color:var(--muted)}
+.steps span{background:var(--soft);padding:7px 15px;border-radius:100px}
+.steps span b{color:var(--red)}
+
+/* chooser */
+.chooser{padding:44px 0 10px}
+.q-label{display:flex;align-items:center;gap:12px;font-size:17px;font-weight:900;margin-bottom:20px}
+.q-label em{font-style:normal;background:var(--black);color:#fff;font-family:var(--en);font-size:13px;padding:5px 11px;letter-spacing:.1em}
+.picks{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.pick{border:2px solid var(--line);background:#fff;padding:22px 22px 20px;text-align:left;transition:.2s;position:relative;border-radius:4px;display:block;width:100%}
+.pick:hover{border-color:var(--black);transform:translateY(-2px)}
+.pick.on{border-color:var(--red);background:#fff7f7}
+.pick .n{font-family:var(--en);font-size:13px;color:var(--red);letter-spacing:.1em;display:block;margin-bottom:6px}
+.pick strong{display:block;font-size:18px;font-weight:900;line-height:1.5}
+.pick small{display:block;font-size:12.5px;color:#6a6a6a;margin-top:8px;line-height:1.7}
+.pick .cnt{position:absolute;right:16px;top:18px;font-size:11px;font-weight:900;color:#fff;background:var(--black);padding:3px 9px;border-radius:100px}
+.pick.on .cnt{background:var(--red)}
+.pick-all{grid-column:1/-1;text-align:center;border-style:dashed;padding:16px}
+.pick-all strong{font-size:15px}
+
+/* results */
+.results{padding:46px 0 20px;scroll-margin-top:80px}
+.res-head{border-top:3px solid var(--black);padding-top:20px;margin-bottom:8px}
+.res-head .en{font-family:var(--en);font-size:12px;letter-spacing:.2em;color:var(--red)}
+.res-head h2{font-size:clamp(20px,3.2vw,27px);font-weight:900;line-height:1.45;margin-top:4px}
+.res-head p{color:#666;font-size:14px;margin-top:10px}
+
+.list{margin-top:26px;display:flex;flex-direction:column;gap:16px}
+.item{display:grid;grid-template-columns:230px 1fr;gap:20px;border:1px solid var(--line);padding:16px;align-items:center;transition:.2s;border-radius:4px;background:#fff;cursor:pointer}
+.item:hover{border-color:var(--black);box-shadow:0 10px 24px rgba(0,0,0,.08)}
+.item .th{position:relative;aspect-ratio:16/9;background:#111;overflow:hidden;cursor:pointer;border-radius:3px}
+.item .th img{width:100%;height:100%;object-fit:cover}
+.item .th .pl{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:52px;height:37px;border-radius:8px;background:rgba(231,50,47,.94);display:grid;place-items:center;transition:.2s}
+.item .th .pl::after{content:"";width:0;height:0;border-left:13px solid #fff;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px}
+.item:hover .th .pl{transform:translate(-50%,-50%) scale(1.1)}
+.item .no{font-family:var(--en);font-size:12px;color:var(--muted);letter-spacing:.1em}
+.item h3{font-size:16px;font-weight:700;line-height:1.6;margin-top:2px}
+.item .point{font-size:13px;color:#5a5a5a;margin-top:9px;padding-left:13px;border-left:3px solid var(--yellow);line-height:1.7}
+.item .acts{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.act{font-size:12.5px;font-weight:900;padding:11px 20px;border:1px solid var(--line);transition:.2s;border-radius:3px}
+.act:hover{background:var(--black);color:#fff;border-color:var(--black)}
+.act.main{background:var(--red);color:#fff;border-color:var(--red)}
+.act.main:hover{background:var(--red-dark);border-color:var(--red-dark)}
+
+.next{margin-top:34px;background:var(--soft);padding:24px;text-align:center;border-radius:4px}
+.next p{font-size:14px;font-weight:700}
+.next button{margin-top:14px;font-size:13px;font-weight:900;color:var(--red);border-bottom:2px solid var(--red);padding-bottom:3px}
+
+/* CTA */
+.cta{background:var(--black);color:#fff;padding:60px 0;margin-top:60px;text-align:center}
+.cta h2{font-size:clamp(20px,3.2vw,30px);font-weight:900;line-height:1.55}
+.cta h2 .mk{background:linear-gradient(transparent 62%,var(--yellow) 62%);color:#fff;padding:0 3px}
+.cta p{margin-top:14px;color:#c8c8c8;font-size:14px}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:900;font-size:15px;padding:16px 32px;transition:.2s;border-radius:3px}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-dark)}
+.btn-line{border:1px solid rgba(255,255,255,.5);color:#fff}
+.btn-line:hover{background:#fff;color:var(--black)}
+
+footer{padding:30px 0;font-size:11.5px;color:var(--muted);text-align:center;border-top:1px solid var(--line)}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:500;background:rgba(8,8,8,.93);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.on{display:flex}
+.mbox{position:relative;width:100%;max-width:960px}
+.mvid{position:relative;aspect-ratio:16/9;background:#000}
+.mvid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mclose{position:absolute;right:0;top:-42px;color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;gap:7px}
+.mclose b{font-size:21px;line-height:1}
+.mmeta{color:#fff;padding-top:16px}
+.mmeta h3{font-size:16px;font-weight:700;line-height:1.6}
+.mmeta a{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:700;color:#ddd;border-bottom:1px solid var(--red);padding-bottom:2px}
+
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,16px);background:var(--black);color:#fff;padding:12px 24px;font-size:13px;font-weight:700;z-index:900;opacity:0;pointer-events:none;transition:.28s}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+@media(max-width:720px){
+  .picks{grid-template-columns:1fr}
+  .item{grid-template-columns:1fr;gap:14px}
+  .item .th{max-width:none}
+  .intro{padding:44px 0 6px}
+  .act{flex:1;text-align:center;padding:13px 10px}
+  .hd-link{display:none}
+  .logo b{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hd">
+    <a class="logo" href="#top">
+      <span class="logo-mark"></span>
+      <span><b>AMBITIOUS</b><i>工務店のための集客実践塾</i></span>
+    </a>
+    <div class="hd-right">
+      <button class="hd-link" id="share-page" type="button">このページを共有</button>
+      <a class="hd-cta" href="https://www.ambitious.pro/" target="_blank" rel="noopener">無料相談</a>
+    </div>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<div class="intro">
+  <div class="wrap">
+    <span class="en">SELECT YOUR ISSUE</span>
+    <h1>いまの<span class="mk">お悩みを選ぶ</span>だけ。<br>見るべき動画が出てきます。</h1>
+    <p>工務店専門・累計約4,000本のノウハウを、目的別に整理しました。</p>
+    <div class="steps">
+      <span><b>STEP1</b> 悩みを選ぶ</span>
+      <span><b>STEP2</b> 動画を見る</span>
+      <span><b>STEP3</b> 社内・お客様に共有</span>
+    </div>
+  </div>
+</div>
+
+<div class="chooser">
+  <div class="wrap">
+    <div class="q-label"><em>Q</em>いま、どれが一番近いですか？</div>
+    <div class="picks" id="picks"></div>
+  </div>
+</div>
+
+<div class="results" id="results" hidden>
+  <div class="wrap">
+    <div class="res-head">
+      <span class="en" id="r-en"></span>
+      <h2 id="r-title"></h2>
+      <p id="r-desc"></p>
+    </div>
+    <div class="list" id="list"></div>
+    <div class="next">
+      <p>次のステップも見てみますか？</p>
+      <button id="backtop">↑ ほかのお悩みを選ぶ</button>
+    </div>
+  </div>
+</div>
+
+<div class="cta">
+  <div class="wrap">
+    <h2>「うちの場合、何を撮ればいい？」<br><span class="mk">その答えは、無料相談で。</span></h2>
+    <p>企画・撮影・編集・公開・分析までまるごとお任せ。工務店専門だからできる提案があります。</p>
+    <div class="cta-btns">
+      <a class="btn btn-red" href="https://www.ambitious.pro/" target="_blank" rel="noopener">アンビシャス公式サイト</a>
+      <a class="btn btn-line" href="https://youtube.com/@syuukyaku_koumutenn" target="_blank" rel="noopener">チャンネル登録する</a>
+    </div>
+  </div>
+</div>
+
+<footer>© AMBITIOUS 工務店のための集客実践塾｜かんたん版</footer>
+
+<div class="modal" id="modal">
+  <div class="mbox">
+    <button class="mclose" id="mclose"><b>×</b>閉じる</button>
+    <div class="mvid" id="mvid"></div>
+    <div class="mmeta"><h3 id="mtitle"></h3><a id="mlink" href="#" target="_blank" rel="noopener">YouTubeで開く →</a></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const CATS = [
+  {id:"start", en:"STEP 01", q:"YouTube、やるべき？", sub:"効果があるのか判断したい／失敗したくない",
+   title:"はじめてのYouTube集客", desc:"費用対効果・向き不向き・よくある失敗。まずはここから判断してください。"},
+  {id:"plan", en:"STEP 02", q:"何を撮ればいい？", sub:"企画が思いつかない／ネタが続かない",
+   title:"企画・コンテンツ戦略", desc:"再生数ではなく「問い合わせ」につながる企画の型を解説します。"},
+  {id:"interview", en:"STEP 03", q:"うまく話せない…", sub:"カメラの前が苦手／魅力を引き出したい",
+   title:"インタビュー・話し方", desc:"社長・スタッフの本音を引き出す、アンビシャス独自のインタビュー術。"},
+  {id:"make", en:"STEP 04", q:"編集で差がつく？", sub:"仕上げのチェックポイントを知りたい",
+   title:"撮影・編集・仕上げ", desc:"BGM・画像など、公開前に必ず確認したい要素を整理しました。"},
+  {id:"sales", en:"STEP 05", q:"営業でどう使う？", sub:"成約につなげたい／価格競争から抜けたい",
+   title:"営業・成約への活用術", desc:"撮った動画を商談・追客の現場でどう使うか。24時間働く営業ツールに。"},
+  {id:"web", en:"STEP 06", q:"SNSやMEOは？", sub:"YouTube以外の最新集客も知りたい",
+   title:"WEB集客・SNS最新事情", desc:"Googleマップ、Instagram、ショート動画、AI活用まで。住宅業界の“今”。"}
+];
+
+const VIDEOS = [
+  {id:"TJ3UKEitfIc", cat:"start", title:"YouTube導入を迷う工務店必見！1年以上継続で費用対効果100%の真実", point:"「本当に元が取れるのか」に、継続年数と実データで答える1本。"},
+  {id:"yB5skUuhg28", cat:"start", title:"【保存版】工務店経営者絶対見て！これできる人はYouTubeをやったほうがいい！動画でしか伝わらない魅力の伝え方を教えます！", point:"YouTubeが向いている工務店の条件と、動画でしか伝わらない魅力とは。"},
+  {id:"dNv4vV1sS5E", cat:"start", title:"【工務店がYouTubeで失敗する勘違い】バズらなくていい！再生回数50回で十分な「動画営業ツール」としての活用法", point:"再生数を追わなくていい理由。50回でも成果が出る考え方。"},
+  {id:"TZGI0sH08Oo", cat:"start", title:"YouTubeで失敗する人の特徴3つを大公開！", point:"始める前に知っておきたい、つまずきやすい3つのパターン。"},
+
+  {id:"W-1Kw0xxpw0", cat:"plan", title:"工務店YouTubeの企画に困ったら見るべし！プロが教えるバズる企画3選【ロケ・泣ける本音・営業直結】", point:"すぐ真似できる企画が3つ。ネタ切れのときにまずこの1本。"},
+  {id:"-kps5ru-jqc", cat:"plan", title:"【工務店必見】問い合わせが劇的に増える！YouTube動画「5つの構成要素」を全解説【工務店集客】", point:"動画の“型”がわかる。構成に迷わなくなります。"},
+  {id:"7IQulqxDz4U", cat:"plan", title:"【工務店必見】競合に勝つ！たった1本の動画で「多決をひっくり返す」YouTube企画の極意【工務店集客】", point:"相見積り・比較検討で選ばれるための企画の考え方。"},
+  {id:"_jqWmwtKWHI", cat:"plan", title:"【保存版】施主の心をつかむ！共感を生むルームツアー動画戦略をプロが徹底解説します！【工務店集客】", point:"定番のルームツアーを、ただの内覧で終わらせないコツ。"},
+  {id:"bEBVKkyLz4k", cat:"plan", title:"【工務店】実はこれがウケる！主婦スタッフが語る「見たい動画」「見ない動画」を徹底解剖します！", point:"施主目線のリアルな本音。作り手の思い込みに気づけます。"},
+
+  {id:"DizswSBZB_M", cat:"interview", title:"【保存版】動画で話せるか自信がない方へ！この動画で絶対話せるようになります！", point:"話すのが苦手でも大丈夫。出演前に見ておきたい1本。"},
+  {id:"mdb-I9We498", cat:"interview", title:"「他社をひっくり返して当社で契約！」を実現する動画制作とは？工務店に特化した独自のインタビュー術", point:"契約が動いた事例から学ぶ、工務店特化のインタビュー設計。"},
+  {id:"IS-m1wwb91w", cat:"interview", title:"【工務店様へ】成果を出す動画を作る！ | インタビュアー西浦の紹介と「あなた」を引き出す秘訣", point:"人柄が伝わる動画になる、引き出し方の秘訣。"},
+  {id:"dts8kmdY_Ng", cat:"interview", title:"【工務店集客の秘訣】良い動画は「インタビューアーの相性」で決まる！採用しないフリーアナウンサーと自社インタビュアーの決定的な違い", point:"誰が聞くかで動画は変わる。進行役選びの基準。"},
+
+  {id:"fZZE6SN9k88", cat:"make", title:"【動画編集マニュアル】ただの編集で終わらせない！工務店YouTubeを成功に導くポイント", point:"自社編集でも外注管理でも使える、編集の基準づくり。"},
+
+  {id:"wM0UvwjMBys", cat:"sales", title:"営業マンの1時間を動画が代行！YouTubeで24時間「自動プレゼン」する仕組みとは？", point:"説明の時間を動画に任せる。営業効率が変わる仕組み。"},
+  {id:"4WTldzpG1hc", cat:"sales", title:"【工務店集客】会う前に勝負は決まっている！成約率を爆上げする「ポールポジション戦略」とは？", point:"商談前に見てもらうだけで、成約率が上がる理由。"},
+  {id:"iCYfO08KCTg", cat:"sales", title:"【工務店集客】あのスティーブ・ジョブズもやっていた！？営業の常識が変わる！YouTubeで「価格競争」から抜け出す方法！", point:"値段で比べられない状態をどうつくるか。"},
+  {id:"9yNbg9hhfuk", cat:"sales", title:"【工務店】撮影した動画を無駄にしない！工務店のための「動画6大活用術」を大公開【集客】", point:"1本の動画を6通りに使い回す。撮って終わりにしない運用。"},
+
+  {id:"-FLu_Z08ijs", cat:"web", title:"【工務店MEO】Googleマップで上位3社に入る「3つの絶対条件」を専門家が徹底解説！", point:"地域集客の要。Googleマップで上位に入る条件。"},
+  {id:"TlnmCi3-9qU", cat:"web", title:"【保存版】最初にこれを知らないとお金ムダになります！100万再生の罠？ショート動画で契約が取れない理由を徹底解説します！", point:"ショート動画に力を入れる前に知っておきたい落とし穴。"},
+  {id:"u0r_isCj2tc", cat:"web", title:"【衝撃】インスタで600万再生しても、問い合わせ1件！？住宅業界SNSの真実【つぼいのまこと対談】", point:"再生数と問い合わせは別物。SNS運用のリアルな話。"},
+  {id:"pkBp4KFGwfc", cat:"web", title:"【工務店必見！】「家具がない」施工事例はもう卒業。AIで暮らしをイメージさせる最新の集客術", point:"施工事例の見せ方をAIでアップデートする方法。"},
+  {id:"y9jzKJRkYpA", cat:"web", title:"ハウスメーカー展示場に潜入取材！衝撃の事実！工務店は潰される？大手ハウスメーカーの営業戦略と対策を暴露！", point:"大手の営業戦略を知り、工務店側の打ち手を考える。"}
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const countOf = id => VIDEOS.filter(v => v.cat === id).length;
+
+/* --- choices --- */
+$("#picks").innerHTML = CATS.map(c => `
+  <button class="pick" data-cat="${c.id}">
+    <span class="cnt">${countOf(c.id)}本</span>
+    <span class="n">${c.en}</span>
+    <strong>${esc(c.q)}</strong>
+    <small>${esc(c.sub)}</small>
+  </button>`).join("") +
+  `<button class="pick pick-all" data-cat="all"><strong>とりあえず全部見る（${VIDEOS.length}本）</strong></button>`;
+
+/* --- results --- */
+function show(catId){
+  const list = catId === "all" ? VIDEOS : VIDEOS.filter(v => v.cat === catId);
+  const c = CATS.find(x => x.id === catId);
+  $("#r-en").textContent = c ? c.en : "ALL MOVIES";
+  $("#r-title").textContent = c ? c.title + "（" + list.length + "本）" : "すべての動画（" + list.length + "本）";
+  $("#r-desc").textContent = c ? c.desc : VIDEOS.length + "本すべてを、おすすめの順番で並べています。上から順にどうぞ。";
+  $("#list").innerHTML = list.map((v, i) => `
+    <article class="item" data-play="${v.id}">
+      <div class="th" data-play="${v.id}">
+        <img loading="lazy" src="https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg"
+             onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${v.id}/hqdefault.jpg'" alt="${esc(v.title)}">
+        <span class="pl"></span>
+      </div>
+      <div>
+        <span class="no">${String(i + 1).padStart(2, "0")}</span>
+        <h3>${esc(v.title)}</h3>
+        <p class="point">${esc(v.point)}</p>
+        <div class="acts">
+          <button class="act main" data-play="${v.id}">▶ この場で見る</button>
+          <button class="act" data-copy="${v.id}">URLをコピー</button>
+        </div>
+      </div>
+    </article>`).join("");
+
+  const box = $("#results");
+  box.hidden = false;
+  document.querySelectorAll(".pick").forEach(p => p.classList.toggle("on", p.dataset.cat === catId));
+  box.scrollIntoView({behavior:"smooth", block:"start"});
+}
+$("#picks").addEventListener("click", e => {
+  const b = e.target.closest(".pick");
+  if (b) show(b.dataset.cat);
+});
+$("#backtop").addEventListener("click", () => {
+  document.querySelector(".chooser").scrollIntoView({behavior:"smooth", block:"start"});
+});
+
+/* --- modal --- */
+const modal = $("#modal");
+function openModal(id){
+  const v = VIDEOS.find(x => x.id === id);
+  if (!v) return;
+  $("#mvid").innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0" title="${esc(v.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  $("#mtitle").textContent = v.title;
+  $("#mlink").href = "https://www.youtube.com/watch?v=" + id;
+  modal.classList.add("on");
+  document.body.style.overflow = "hidden";
+}
+function closeModal(){
+  modal.classList.remove("on");
+  $("#mvid").innerHTML = "";
+  document.body.style.overflow = "";
+}
+document.addEventListener("click", e => {
+  const c = e.target.closest("[data-copy]");
+  if (c) { copyURL(c.dataset.copy); return; }
+  const p = e.target.closest("[data-play]");
+  if (p) { openModal(p.dataset.play); }
+});
+$("#mclose").addEventListener("click", closeModal);
+modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+
+/* --- copy --- */
+let tt;
+function toast(m){ const t = $("#toast"); t.textContent = m; t.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("on"), 2000); }
+function copyURL(id){
+  const url = "https://www.youtube.com/watch?v=" + id;
+  const done = () => toast("URLをコピーしました：お客様への共有にどうぞ");
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(url).then(done).catch(() => fb(url, done));
+  } else fb(url, done);
+}
+function fb(url, done){
+  const ta = document.createElement("textarea");
+  ta.value = url; ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand("copy"); done(); } catch { toast("コピーできませんでした：" + url); }
+  document.body.removeChild(ta);
+}
+
+/* --- share page --- */
+$("#share-page").addEventListener("click", async () => {
+  const data = {
+    title: document.title,
+    text: "工務店のYouTube集客ノウハウを、お悩み別に選べる動画ガイドです。",
+    url: location.href
+  };
+  if (navigator.share) {
+    try { await navigator.share(data); return; } catch (e) { if (e.name === "AbortError") return; }
+  }
+  const done = () => toast("ページURLをコピーしました");
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(location.href).then(done).catch(() => fb(location.href, done));
+  } else fb(location.href, done);
+});
+</script>
+</body>
+</html>
